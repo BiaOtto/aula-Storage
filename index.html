@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drag and Drop com Local Storage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>🔁 Drag and Drop</h1>
+
+  <div class="theme-selector">
+    <h2>🎨 Tema</h2>
+    <button onclick="setTheme('light')">Claro</button>
+    <button onclick="setTheme('dark')">Escuro</button>
+  </div>
+
+  <div>
+    <label for="username">Seu nome:</label>
+    <input type="text" id="username" />
+    <button onclick="saveName()">Salvar</button>
+    <p id="welcomeMsg"></p>
+    <p id="visitCounter"></p>
+  </div>
+
+  <div>
+    <h2>📋 Nova Tarefa</h2>
+    <input type="text" id="taskInput" placeholder="Digite uma tarefa" />
+    <button onclick="addTask()">Adicionar</button>
+  </div>
+
+  <div class="wrapper">
+    <div class="zone" id="startZone">
+      <h2>📦 Área Inicial</h2>
+    </div>
+
+    <div class="zone" id="doingZone">
+      <h2>🔧 Fazendo</h2>
+    </div>
+
+    <div class="zone" id="endZone">
+      <h2>🎯 Área Final</h2>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

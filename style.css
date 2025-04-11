@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #eef1f5;
+  padding: 40px;
+  margin: 0;
+  color: #000;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.theme-selector {
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.zone {
+  flex: 1;
+  max-width: 300px;
+  min-height: 300px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px dashed #072e33;
+  border-radius: 12px;
+  transition: background-color 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+body.dark .zone {
+  background-color: #333;
+  border-color: #ccc;
+}
+
+.zone.over {
+  background-color: #ffffff;
+  border-color: #000000;
+}
+
+.zone h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.draggable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #aaacad;
+  color: white;
+  font-weight: bold;
+  cursor: move;
+  border-radius: 8px;
+  user-select: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.draggable.dragging {
+  opacity: 0.6;
+  transform: scale(1.05);
+  background-color: #2b598a;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.remove-btn:hover {
+  color: #ff0000;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .zone {
+    max-width: 100%;
+    min-height: 200px;
+    padding: 15px;
+  }
+
+  .draggable {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .remove-btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .zone h2 {
+    font-size: 1rem;
+  }
+
+  input, button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
